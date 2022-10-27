@@ -25,14 +25,14 @@ while True:
                 while True:
                     answer = input().lower()
                     if (re.fullmatch("нет", answer)):
-                        print("Крылатые качели вернули Вас к дому!")
-# как перейти к началу программы?
+                        print("Крылатые качели вернули Вас обратно!")
+                        break
                     elif (re.fullmatch("да", answer)):
                         print("Эскимо, Пломбир, Фруктовое, Молочное. Что выбираете?")
                     elif (re.fullmatch(".*выберу\s(\w)+.*", answer.lower())):
                         matchs = re.search(".*выберу\s(\w)+", answer.lower())
                         if not matchs[0]:
-                            print("Такого, к сожалению, нет... сделайте выбор еще раз")
+                            print("Этого нет. Здесь киоск, а не гипермаркет")
                         else:
                             if (matchs[0] == "выберу эскимо"):
                                 print("У нас лучшее эскимо!")
@@ -44,7 +44,6 @@ while True:
                                 print("ммм... вот ваше вкууусное молочное")
                             else:
                                 print("К сожалению такого сорта нет в ассортименте")
-
             else:
                 print("не там свернули, не там постояли...")
                 break
